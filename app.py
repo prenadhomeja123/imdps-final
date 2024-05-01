@@ -51,7 +51,7 @@ def hepatitisC():
     return render_template('hepatitisC.html')
 @app.route('/strok')
 def stroke():
-    return render_template('strok.html')
+    return render_template('Strok.html')
 @app.route('/predict/heart', methods=['POST'])
 def predictheart():
     features = [float(x) for x in request.form.values()]
@@ -136,9 +136,9 @@ def predictstroke():
     prediction = stroke_model.predict(final_features)
     output = prediction[0]
     if output == 1:
-        return render_template('strok.html', prediction_text='The person is likely to have stroke .')
+        return render_template('Strok.html', prediction_text='The person is likely to have stroke .')
     else:
-        return render_template('strok.html', prediction_text='The person is not likely to have stroke .')
+        return render_template('Strok.html', prediction_text='The person is not likely to have stroke .')
 
 @app.route('/predict/lung', methods=['POST'])
 def predictlung_cancer():
