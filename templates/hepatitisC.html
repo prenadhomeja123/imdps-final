@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intelligent Disease Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: url('https://www.homenaturalcures.com/wp-content/uploads/Hepatitis-C.jpg')
+        center/cover fixed no-repeat;
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    header h2 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      background: #333;
+      padding: 10px;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin-left: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+    form {
+      width: 500px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 15px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Intelligent Multiple Disease Prediction</h2>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="heart.html">Heart</a>
+        <a href="kidney.html">Kidney</a>
+        <a href="liver.html">Liver</a>
+        <a href="parkinsons.html">Parkinson's</a>
+        <a href="lung.html">Lung</a>
+        <a href="hepatitisC.html">Hepatitis C</a>
+        <a href="stroke.html">Stroke</a>
+      </nav>
+  </header>
+  <h1 style="text-align: center">Hepatitis C Predictor</h1>
+
+  <section  style="display: flex; flex-direction: column; align-items: center;" >
+    <form action="{{ url_for('predicthepatitisC') }}" method="post" >
+      <label for="Age">Age:</label>
+      <input type="text" id="Age" name="Age" placeholder="Enter age, e.g., 40" />
+
+      <label for="Sex">Sex:</label>
+      <input
+        type="text"
+        id="Sex"
+        name="Sex"
+        placeholder="Enter sex, e.g., 1 (male) or 0 (female)"
+      />
+
+      <label for="ALB">ALB (Albumin):</label>
+      <input type="text" id="ALB" name="ALB" placeholder="Enter ALB, e.g., 3.5" />
+
+      <label for="ALP">ALP (Alkaline Phosphatase):</label>
+      <input type="text" id="ALP" name="ALP" placeholder="Enter ALP, e.g., 70" />
+
+      <label for="ALT">ALT (Alanine Aminotransferase):</label>
+      <input type="text" id="ALT" name="ALT" placeholder="Enter ALT, e.g., 40" />
+
+      <label for="BIL">BIL (Bilirubin):</label>
+      <input type="text" id="BIL" name="BIL" placeholder="Enter BIL, e.g., 1.2" />
+
+      <label for="CHE">CHE (Cheolinesterase):</label>
+      <input type="text" id="CHE" name="CHE" placeholder="Enter CHE, e.g., 600" />
+
+      <label for="CHOL">CHOL (Cholesterol):</label>
+      <input type="text" id="CHOL" name="CHOL" placeholder="Enter CHOL, e.g., 200" />
+
+      <label for="CREA">CREA (Creatinine):</label>
+      <input type="text" id="CREA" name="CREA" placeholder="Enter CREA, e.g., 0.8" />
+
+      <label for="GGT">GGT (Gamma-Glutamyl Transferase):</label>
+      <input type="text" id="GGT" name="GGT" placeholder="Enter GGT, e.g., 50" />
+
+      <label for="PROT">PROT (Protein):</label>
+      <input type="text" id="PROT" name="PROT" placeholder="Enter PROT, e.g., 7.5" />
+
+      <button type="submit">Predict</button>
+    </form>
+       <h2 style="text-align: center; margin-top: 20px; color: white; background-color:black; border: 2px solid #b18d5b; padding: 10px;">{{ prediction_text }}</h2>
+
+  </section>
+
+  <footer>&copy; 2024 Intelligent Disease Prediction</footer>
+</body>
+</html>

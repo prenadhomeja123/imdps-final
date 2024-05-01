@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intelligent Disease Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: url('https://cdn-prod.medicalnewstoday.com/content/images/hero/322/322258/322258_1100.jpg')
+          center/cover fixed no-repeat; /* Replace with the actual image URL */
+        color: white;
+      }
+
+      header {
+        background-color: rgba(0, 0, 0, 0.7); /* Dark background color */
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      header h2 {
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        background: #333;
+        padding: 10px;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        margin-left: 15px;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      footer {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Dark background color for the footer */
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: auto; /* Push the footer to the bottom */
+      }
+
+      form {
+        width: 500px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+</head>
+   <body>
+  <header>
+      <h2>Intelligent Multiple Disease Prediction</h2>
+      <nav>
+        <a href="\homee">Home</a>
+
+
+        <a href="/diabetes">Diabetes</a>
+        <a href="/heart">Heart</a>
+        <a href="/kidney">Kidney</a>
+        <a href="/liver">Liver</a>
+        <a href="/parkinsons">Parkinson</a>
+        <a href="/lung">Lung</a>
+
+        <a href="/strok">Stroke</a>
+
+      </nav>
+    </header>
+    <h1 style="text-align: center">Diabetes Predictor</h1>
+
+    <section style="display: flex; flex-direction: column; align-items: center;" >
+
+      <form action="{{ url_for('predictdiabetes') }}" method="post">
+         <label>Pregnancies</label>
+         <input type="text" name="Pregnancies" required>
+         <br>
+         <label>Glucose</label>
+         <input type="text" name="Glucose" required>
+         <br>
+         <label>BloodPressure</label>
+         <input type="text" name="BloodPressure" required>
+         <br>
+         <label>SkinThickness</label>
+         <input type="text" name="SkinThickness" required>
+         <br>
+         <label>Insulin</label>
+         <input type="text" name="Insulin" required>
+         <br>
+         <label>BMI</label>
+         <input type="text" name="BMI" required>
+         <br>
+         <label>DiabetesPedigreeFunction</label>
+         <input type="text" name="DiabetesPedigreeFunction" required>
+         <br>
+         <label>Age</label>
+         <input type="text" name="Age" required>
+         <br>
+         <button type="submit">Predict</button>
+      </form>
+
+      <h2 style="text-align: center; margin-top: 20px; color: white; background-color:black; border: 2px solid #b18d5b; padding: 10px;">{{ prediction_text }}</h2>
+
+</section>
+
+   <footer>&copy; 2024 Intelligent Disease Prediction</footer>
+  </body>
+</html>

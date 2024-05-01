@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intelligent Disease Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: url('https://static.wixstatic.com/media/a5b4c8_42c2610aef644ceaa10874aedd5f93f3~mv2.jpg/v1/fit/w_798%2Ch_415%2Cal_c%2Cq_80/file.jpg')
+          center/cover fixed no-repeat; /* Replace with the actual image URL */
+        color: white;
+      }
+
+      header {
+        background-color: rgba(0, 0, 0, 0.7); /* Dark background color */
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      header h2 {
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        background: #333;
+        padding: 10px;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        margin-left: 15px;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      footer {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Dark background color for the footer */
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: auto; /* Push the footer to the bottom */
+      }
+
+      form {
+        width: 500px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Intelligent Multiple Disease Prediction</h2>
+      <nav>
+        <a href="\homee">Home</a>
+
+
+        <a href="/diabetes">Diabetes</a>
+        <a href="/heart">Heart</a>
+        <a href="/kidney">Kidney</a>
+        <a href="/liver">Liver</a>
+        <a href="/parkinsons">Parkinson</a>
+        <a href="/lung">Lung</a>
+
+        <a href="/strok">Stroke</a>
+      </nav>
+    </header>
+    <!-- ... (previous code) ... -->
+
+    <h1 style="text-align: center">Parkinson's Disease Predictor</h1>
+
+    <section style="display: flex; flex-direction: column; align-items: center;">
+      <form action="{{ url_for('predictparkinsons') }}" method="post" >
+        <label for="MDVPFo">MDVP:Fo(Hz):</label>
+<input type="text" id="MDVPFo" name="MDVPFo" placeholder="Enter MDVP:Fo(Hz)" />
+
+<label for="MDVPFhi">MDVP:Fhi(Hz):</label>
+<input type="text" id="MDVPFhi" name="MDVPFhi" placeholder="Enter MDVP:Fhi(Hz)" />
+
+<label for="MDVPFlo">MDVP:Flo(Hz):</label>
+<input type="text" id="MDVPFlo" name="MDVPFlo" placeholder="Enter MDVP:Flo(Hz)" />
+
+<label for="MDVPJitter">MDVP:Jitter(%):</label>
+<input type="text" id="MDVPJitter" name="MDVPJitter" placeholder="Enter MDVP:Jitter(%)" />
+
+<label for="MDVPJitterAbs">MDVP:Jitter(Abs):</label>
+<input type="text" id="MDVPJitterAbs" name="MDVPJitterAbs" placeholder="Enter MDVP:Jitter(Abs)" />
+
+<label for="MDVPRAP">MDVP:RAP:</label>
+<input type="text" id="MDVPRAP" name="MDVPRAP" placeholder="Enter MDVP:RAP" />
+
+<label for="MDVPPPQ">MDVP:PPQ:</label>
+<input type="text" id="MDVPPPQ" name="MDVPPPQ" placeholder="Enter MDVP:PPQ" />
+
+<label for="JitterDDP">Jitter:DDP:</label>
+<input type="text" id="JitterDDP" name="JitterDDP" placeholder="Enter Jitter:DDP" />
+
+<label for="MDVPShimmer">MDVP:Shimmer:</label>
+<input type="text" id="MDVPShimmer" name="MDVPShimmer" placeholder="Enter MDVP:Shimmer" />
+
+<label for="MDVPShimmerdB">MDVP:Shimmer(dB):</label>
+<input type="text" id="MDVPShimmerdB" name="MDVPShimmerdB" placeholder="Enter MDVP:Shimmer(dB)" />
+
+<label for="ShimmerAPQ3">Shimmer:APQ3:</label>
+<input type="text" id="ShimmerAPQ3" name="ShimmerAPQ3" placeholder="Enter Shimmer:APQ3" />
+
+<label for="ShimmerAPQ5">Shimmer:APQ5:</label>
+<input type="text" id="ShimmerAPQ5" name="ShimmerAPQ5" placeholder="Enter Shimmer:APQ5" />
+
+<label for="MDVPAPQ">MDVP:APQ:</label>
+<input type="text" id="MDVPAPQ" name="MDVPAPQ" placeholder="Enter MDVP:APQ" />
+
+<label for="ShimmerDDA">Shimmer:DDA:</label>
+<input type="text" id="ShimmerDDA" name="ShimmerDDA" placeholder="Enter Shimmer:DDA" />
+
+<label for="NHR">NHR:</label>
+<input type="text" id="NHR" name="NHR" placeholder="Enter NHR" />
+
+<label for="HNR">HNR:</label>
+<input type="text" id="HNR" name="HNR" placeholder="Enter HNR" />
+
+<label for="RPDE">RPDE:</label>
+<input type="text" id="RPDE" name="RPDE" placeholder="Enter RPDE" />
+
+<label for="DFA">DFA:</label>
+<input type="text" id="DFA" name="DFA" placeholder="Enter DFA" />
+
+<label for="spread1">Spread1:</label>
+<input type="text" id="spread1" name="spread1" placeholder="Enter Spread1" />
+
+<label for="spread2">Spread2:</label>
+<input type="text" id="spread2" name="spread2" placeholder="Enter Spread2" />
+
+<label for="D2">D2:</label>
+<input type="text" id="D2" name="D2" placeholder="Enter D2" />
+
+<label for="PPE">PPE:</label>
+<input type="text" id="PPE" name="PPE" placeholder="Enter PPE" />
+
+        <button type="submit">Predict</button>
+      </form>
+
+      <h2 style="text-align: center; margin-top: 20px; color: white; background-color:black; border: 2px solid #b18d5b; padding: 10px;">{{ prediction_text }}</h2>
+
+    </section>
+    <!-- ... (remaining code) ... -->
+
+    <footer>&copy; 2024 Intelligent Disease Prediction</footer>
+
+    <!-- ... (remaining code) ... -->
+  </body>
+</html>

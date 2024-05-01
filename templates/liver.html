@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intelligent Disease Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: url('http://i.huffpost.com/gen/4501976/thumbs/o-LIVER-DISEASE-900.jpg?5') center/cover fixed no-repeat;
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    header h2 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #333;
+      padding: 10px;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin-left: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+    form {
+      width: 500px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 15px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Intelligent Multiple Disease Prediction</h2>
+    <nav>
+      <a href="\homee">Home</a>
+
+
+        <a href="/diabetes">Diabetes</a>
+        <a href="/heart">Heart</a>
+        <a href="/kidney">Kidney</a>
+        <a href="/liver">Liver</a>
+        <a href="/parkinsons">Parkinson</a>
+        <a href="/lung">Lung</a>
+
+        <a href="/strok">Stroke</a>
+    </nav>
+  </header>
+  <h1 style="text-align: center">Liver Disease Predictor</h1>
+  <section style="display: flex; flex-direction: column; align-items: center;">
+    <form action="{{ url_for('predictliver') }}" method="post">
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" placeholder="Enter the age, e.g., 30" />
+
+      <label for="gender">Gender:</label>
+      <input type="text" id="gender" name="gender" placeholder="Enter the gender, e.g., Male/Female" />
+
+      <label for="totalBilirubin">Total Bilirubin:</label>
+      <input type="text" id="totalBilirubin" name="totalBilirubin" placeholder="Enter the total bilirubin level, e.g., 1.2" />
+
+      <label for="directBilirubin">Direct Bilirubin:</label>
+      <input type="text" id="directBilirubin" name="directBilirubin" placeholder="Enter the direct bilirubin level, e.g., 0.5" />
+
+      <label for="alkalinePhosphotase">Alkaline Phosphotase:</label>
+      <input type="text" id="alkalinePhosphotase" name="alkalinePhosphotase" placeholder="Enter the alkaline phosphotase level, e.g., 200" />
+
+      <label for="alamineAminotransferase">Alamine Aminotransferase:</label>
+      <input type="text" id="alamineAminotransferase" name="alamineAminotransferase" placeholder="Enter the alamine aminotransferase level, e.g., 25" />
+
+      <label for="aspartateAminotransferase">Aspartate Aminotransferase:</label>
+      <input type="text" id="aspartateAminotransferase" name="aspartateAminotransferase" placeholder="Enter the aspartate aminotransferase level, e.g., 30" />
+
+      <label for="totalProteins">Total Proteins:</label>
+      <input type="text" id="totalProteins" name="totalProteins" placeholder="Enter the total proteins level, e.g., 6.8" />
+
+      <label for="albumin">Albumin:</label>
+      <input type="text" id="albumin" name="albumin" placeholder="Enter the albumin level, e.g., 3.5" />
+
+      <label for="albuminGlobulinRatio">Albumin and Globulin Ratio:</label>
+      <input type="text" id="albuminGlobulinRatio" name="albuminGlobulinRatio" placeholder="Enter the albumin and globulin ratio, e.g., 1.2" />
+
+
+      <button type="submit">Predict</button>
+    </form>
+      <h2 style="text-align: center; margin-top: 20px; color: white; background-color:black; border: 2px solid #b18d5b; padding: 10px;">{{ prediction_text }}</h2>
+</section>
+  <footer>&copy; 2024 Intelligent Disease Prediction</footer>
+</body>
+</html>
