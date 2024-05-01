@@ -15,7 +15,7 @@ with open('liver.pkl' , 'rb') as file:
     liver_model=pickle.load(file)
 with open('lung_cancer_svm.pkl' , 'rb') as file:
     lung_cancer_model=pickle.load(file)
-with open('strokeee.pkl' , 'rb') as file:
+with open('strokeee.pkl', 'rb') as file:
     stroke_model=pickle.load(file)
 
 app = Flask(__name__)
