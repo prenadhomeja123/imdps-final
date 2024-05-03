@@ -128,32 +128,33 @@
     <section style="display: flex; flex-direction: column; align-items: center;" >
 
       <form action="{{ url_for('predictdiabetes') }}" method="post">
-         <label>Pregnancies</label>
-         <input type="text" name="Pregnancies" required>
-         <br>
-         <label>Glucose</label>
-         <input type="text" name="Glucose" required>
-         <br>
-         <label>BloodPressure</label>
-         <input type="text" name="BloodPressure" required>
-         <br>
-         <label>SkinThickness</label>
-         <input type="text" name="SkinThickness" required>
-         <br>
-         <label>Insulin</label>
-         <input type="text" name="Insulin" required>
-         <br>
-         <label>BMI</label>
-         <input type="text" name="BMI" required>
-         <br>
-         <label>DiabetesPedigreeFunction</label>
-         <input type="text" name="DiabetesPedigreeFunction" required>
-         <br>
-         <label>Age</label>
-         <input type="text" name="Age" required>
-         <br>
-         <button type="submit">Predict</button>
-      </form>
+   <label>Pregnancies</label>
+   <input type="text" name="Pregnancies" placeholder="Enter number of pregnancies (e.g., 2)" required>
+   <br>
+   <label>Glucose</label>
+   <input type="text" name="Glucose" placeholder="Enter glucose level (e.g., 148) " required>
+   <br>
+   <label>BloodPressure</label>
+   <input type="text" name="BloodPressure" placeholder="Enter blood pressure (e.g., 120)" required>
+   <br>
+   <label>SkinThickness</label>
+   <input type="text" name="SkinThickness" placeholder="Enter skin thickness (e.g., 47)" required>
+   <br>
+   <label>Insulin</label>
+   <input type="text" name="Insulin" placeholder="Enter insulin level (e.g., 1 or 0)" required>
+   <br>
+   <label>BMI</label>
+   <input type="text" name="BMI" placeholder="Enter BMI   (e.g., 33.5) " required>
+   <br>
+   <label>DiabetesPedigreeFunction</label>
+   <input type="text" name="DiabetesPedigreeFunction" placeholder="Enter diabetes pedigree function (% of Heredity) (e.g., 0.31)" required>
+   <br>
+   <label>Age</label>
+   <input type="text" name="Age" placeholder="Enter age (e.g., 40 )" required>
+   <br>
+   <button type="submit">Predict</button>
+</form>
+
 
       <h2 style="text-align: center; margin-top: 20px; color: white; background-color:black; border: 2px solid #b18d5b; padding: 10px;">{{ prediction_text }}</h2>
 
